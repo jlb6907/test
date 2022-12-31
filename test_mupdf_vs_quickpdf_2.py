@@ -7,9 +7,9 @@ directory = filedialog.askdirectory(title="Test MUPDF : select images directory"
 bMuPDF = True
 bQuickPDF = True
 
-#########################################################################################################
-# Test with MUPDF/show_pdf_page() : creating a PDF file from a lot of tif images (with g4 compression) #
-#########################################################################################################
+###########################################################################################################################
+# Test with MUPDF (convert_to_pdf and show_pdf_page) : creating a PDF file from a lot of tif images (with g4 compression) #
+###########################################################################################################################
 
 if bMuPDF:
     tBegin = time.perf_counter()
@@ -32,10 +32,10 @@ if bMuPDF:
 
     tEnd = time.perf_counter()
     size = pathlib.Path(pdf_filepath).stat().st_size
-    print(f"MUPDF/show_pdf_page()  : {nb:d} images in {tEnd - tBegin:0.2f} seconds - Pdf File Size = {size:d} bytes")
+    print(f"MUPDF (convert_to_pdf and show_pdf_page) : {nb:d} images in {tEnd - tBegin:0.2f} seconds - Pdf File Size = {size:d} bytes")
 
 #######################################################################################################
-# Test with MUPDF/insert_image() : creating a PDF file from a lot of tif images (with g4 compression) #
+# Test with MUPDF (insert_image) : creating a PDF file from a lot of tif images (with g4 compression) #
 #######################################################################################################
 
 if bMuPDF:
@@ -56,7 +56,7 @@ if bMuPDF:
 
     tEnd = time.perf_counter()
     size = pathlib.Path(pdf_filepath).stat().st_size
-    print(f"MUPDF/insert_image()  : {nb:d} images in {tEnd - tBegin:0.2f} seconds - Pdf File Size = {size:d} bytes")
+    print(f"MUPDF (insert_image) : {nb:d} images in {tEnd - tBegin:0.2f} seconds - Pdf File Size = {size:d} bytes")
 
 ###########################################################################################
 # Test with QUICKPDF : creating a PDF file from a lot of tif images (with g4 compression) #
